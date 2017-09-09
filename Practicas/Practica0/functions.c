@@ -15,7 +15,7 @@ void encrypt (int alpha, int beta)
 	printf("\nMesage to encrypt: %s\n\n", message);					//Print the message to know it is correct
 	for (i = 0; i < strlen (message); i ++)
 	{
-		value = message [i] - 97; 
+		value = message [i] - 97;
 		value *= alpha;												//Multiplying each letter by alpha
 		value += beta;												//Adding beta
 		value %= ALPHABET_SIZE;										//We get the value module alphabet's size
@@ -199,10 +199,9 @@ int gcd (int alpha, int alphabet)									//Implementation of Euclides algorithm
 
 int alg_euc_ext(int n1,int n2) {
     int array[3],x=0,y=0,d=0,x2 = 1,x1 = 0,y2 = 0,y1 = 1,q = 0, r = 0;
-    int auxr[10];
-    int i=0,rep=0;
-    int auxX[10];
-    int auxY[10];
+    int flag=1;
+		int aux;
+		int in=n1;
     if(n2==0){
         array[0]=n1;
         array[1]=1;
@@ -214,36 +213,30 @@ int alg_euc_ext(int n1,int n2) {
             r = n1 - q*n2;
             x = x2-q*x1;
             y = y2 - q*y1;
-            auxr[i]=n1;
-            auxr[i+1]=n2;
             n1 = n2;
             n2 = r;
             x2 = x1;
             x1 = x;
             y2 = y1;
             y1 = y;
-            auxX[i]=x2;
-            auxY[i]=y2;
-            i++;
-            rep++;
-            //printf("%d = %d(%d) + %d(%d) \n",auxr[0],auxr[1],auxr[3],auxr[2],auxr[4]);
-
-        }
-        printf("%d\n",i);
-        for (int j = (i-1),k=0; j >=0, k<=(i-1) ; j--,k++) {
-            printf("1 = %d(%d) + %d(%d)\n",auxr[k],auxX[j],auxr[k+1],auxY[j]);
-        }
-        printf("Numero de repeticiones: %d",rep);
-
+						if(flag%2 != 0){
+						printf("%d = %d(%d) + %d        ||   1 = %d(%d) - %d(%d)  \n",n1*q+r,n1,q,r,x1,y2,x2,y1 );
+						}else{
+						printf("%d = %d(%d) + %d        ||   1 = %d(%d) - %d(%d)  \n",n1*q+r,n1,q,r,x2,y1,x1,y2 );
+					}
+					flag++;
+				}
         array[0] = n1;   // mcd (n1,n2)
         array[1] = x2;   // x
         array[2] = y2;   // y
     }
-    return array[1]; //Alfa inverso
+
+		aux = multiplicativeInverse(in);
+    return aux; //Alfa inverso
 
 }
 
-/*
+
 int multiplicativeInverse (int alpha)
 {
 	int x, inverse;
@@ -251,8 +244,8 @@ int multiplicativeInverse (int alpha)
 	for(inverse = 0; inverse < ALPHABET_SIZE; inverse++)
     {
         x = (alpha * inverse) % ALPHABET_SIZE;
-        printf("1 = %d - (%d * %d)\n", alpha, (ALPHABET_SIZE/alpha), inverse);
+        //printf("1 = %d - (%d * %d)\n", alpha, (ALPHABET_SIZE/alpha), inverse);
         if(x == 1)
             return inverse;
     }
-}*/
+}
