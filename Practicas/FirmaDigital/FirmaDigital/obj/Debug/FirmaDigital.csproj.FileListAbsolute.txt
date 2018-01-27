@@ -1,0 +1,6 @@
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\bin\Debug\FirmaDigital.exe.config
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\bin\Debug\FirmaDigital.exe
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\bin\Debug\FirmaDigital.pdb
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\obj\Debug\FirmaDigital.csprojResolveAssemblyReference.cache
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\obj\Debug\FirmaDigital.exe
+C:\Users\JCVELMON\Desktop\Semestre Actual\Cryptography\Practicas\FirmaDigital\FirmaDigital\obj\Debug\FirmaDigital.pdb

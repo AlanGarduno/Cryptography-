@@ -11,5 +11,5 @@ int alg_euc_ext(int n1,int n2);
 
 //Shared encryption/decryption functions
 void menu ();
-void validateNumbers (int alpha, int beta);
+int validateNumbers (int alpha, int beta);
 int gcd (int alpha, int alphabet);
